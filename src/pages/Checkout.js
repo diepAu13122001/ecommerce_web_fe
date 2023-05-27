@@ -1,8 +1,8 @@
 import React from 'react'
 import Navbar from '../layouts/Navbar'
-import { MDBBadge, MDBBtn, MDBCard, MDBCardBody, MDBCardGroup, MDBCardImage, MDBCardText, MDBCardTitle, MDBCol, MDBContainer, MDBDropdown, MDBDropdownItem, MDBDropdownMenu, MDBDropdownToggle, MDBIcon, MDBInputGroup, MDBListGroup, MDBListGroupItem, MDBNavbar, MDBNavbarBrand, MDBNavbarItem, MDBRow, MDBTable, MDBTableBody, MDBTableHead, MDBTypography } from 'mdb-react-ui-kit'
+import { MDBBtn, MDBCardBody, MDBCardGroup, MDBCardImage, MDBCardText, MDBCardTitle, MDBCol, MDBContainer, MDBDropdown, MDBDropdownItem, MDBDropdownMenu, MDBDropdownToggle, MDBIcon, MDBInputGroup, MDBListGroup, MDBListGroupItem, MDBNavbar, MDBNavbarBrand, MDBNavbarItem, MDBRadio, MDBRow, MDBTable, MDBTableBody, MDBTableHead, MDBTypography } from 'mdb-react-ui-kit'
 
-export function CheckoutNoAcc() {
+export function CheckoutNoAcc() {    
     return (
         <div style={{ backgroundColor: "#f8f6f0" }}>
             <Navbar />
@@ -23,39 +23,50 @@ export function CheckoutNoAcc() {
 
             <MDBRow className='text-start bg-white my-3 px-3' id='order-address'>
                 <div className='text-uppercase fw-bolder fs-5 my-3 pb-2 border-bottom'>Địa chỉ giao hàng</div>
-
                 <MDBInputGroup textBefore='Họ tên người nhận' className='mb-3'>
                     <input className='form-control' type='text' placeholder="Nhập họ và tên người nhận" />
                 </MDBInputGroup>
-
                 <MDBInputGroup textBefore='Email' className='mb-3'>
                     <input className='form-control' type='email' placeholder="Nhập email" />
                 </MDBInputGroup>
-
                 <MDBInputGroup textBefore='Số điện thoại' className='mb-3'>
                     <input className='form-control' type='text' placeholder="Ví dụ: 097123xxx (10 ký tự số)" />
                 </MDBInputGroup>
-
                 <MDBInputGroup textBefore='Quốc gia' className='mb-3'>
                     <input disabled className='form-control' type='text' placeholder="Việt Nam" />
                 </MDBInputGroup>
-
                 <MDBInputGroup textBefore='Tỉnh/ Thành phố' className='mb-3'>
                     <input disabled className='form-control' type='text' placeholder="Thành phố Hồ Chí Minh" />
                 </MDBInputGroup>
-
                 <MDBInputGroup textBefore='Quận/ Huyện' className='mb-3 w-100'>
                     <input className='form-control' type=''></input>
                 </MDBInputGroup>
-
                 <MDBInputGroup textBefore='Email' className='mb-3'>
                     <input className='form-control' type='text' placeholder="Nhập email" />
                 </MDBInputGroup>
-
                 <MDBInputGroup textBefore='Email' className='mb-3'>
                     <input className='form-control' type='text' placeholder="Nhập email" />
                 </MDBInputGroup>
-
+            </MDBRow>
+            <MDBRow className='text-start bg-white my-3 px-3' id='order-address'>
+                <div className='text-uppercase fw-bolder fs-5 my-3 pb-2 border-bottom'>Phương thức vận chuyển</div>
+                <div className="d-inline-flex p-2">
+                    <MDBRadio name='radioNoLabel' id='radioNoLabell' value='' aria-label='...' checked />
+                    <div>
+                        <MDBTypography tag='strong'>Giao hàng tiêu chuẩn: 19.000đ</MDBTypography>
+                        <MDBTypography>Thứ Bảy - 13/05</MDBTypography>
+                    </div>
+                </div>
+            </MDBRow>
+            <MDBRow className='text-start bg-white my-3 px-3' id='order-address'>
+                <div className='text-uppercase fw-bolder fs-5 my-3 pb-2 border-bottom'>Phương thức thanh toán</div>
+                <div id='paymentMethodList'></div>
+                <div className="d-inline-flex p-2"> 
+                    <MDBRadio name='radioNoLabel' id='radioNoLabell' value='' aria-label='...' checked />
+                    <div style={{ background: "url(https://cdn0.fahasa.com/skin/frontend/base/default/images/payment_icon/ico_airpay.svg?q=102192) no-repeat ", width: "40px" }}></div>
+                    <MDBTypography className='mx-2'>Ví ZaloPay</MDBTypography>
+                </div>
+                
             </MDBRow>
             <div style={{ height: "300px" }}></div>
         </div>
